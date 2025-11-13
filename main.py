@@ -1,3 +1,7 @@
+"""
+Ce module contient des fonctions pour tester si un
+nombre est premier
+"""
 from math import sqrt
 
 #### Fonction secondaire
@@ -5,16 +9,33 @@ from math import sqrt
 
 def isprime(p):
 
-    # votre code ici
+    """""
+    Verifie qu un nombre est premier et retourne true le cas échéant, retourne false sinon
 
-    pass
+    """
+
+    premier=True
+    n=2
+    if p<2 :
+        return False
+
+    while n<=sqrt(p) :
+        if p%n==0 :
+            premier=False
+            break
+        n+=1
+
+    return premier
 
 #### Fonction principale
 
 
 def main():
 
-    # vos appels à la fonction secondaire ici
+    """
+    Teste la fonction isprime sur [0; 100]
+    """
+
 
     for n in range(100):
         if isprime(n):
